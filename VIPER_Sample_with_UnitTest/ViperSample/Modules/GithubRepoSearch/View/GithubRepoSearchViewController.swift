@@ -15,6 +15,8 @@ class GithubRepoSearchViewController: UIViewController {
     
     var dependency: Dependency!
 
+    private let displayData = GithubRepoViewData()
+    
     @IBOutlet private weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -39,15 +41,18 @@ extension GithubRepoSearchViewController {
 
 extension GithubRepoSearchViewController: GithubRepoSearchView {
     func showRecommended(_ data: [GithubRepoEntity]) {
-        
+        displayData.recommends = data
+        tableView.reloadData()
     }
     
     func showData(_ data: [GithubRepoEntity]) {
-        // TODO: 
+        displayData.searchResultEntities = data
+        tableView.reloadData()
     }
     
     func showError(_ error: Error) {
-        
+        // TODO: showError
+        print("showed Error: \(error)")
     }
 }
 
@@ -62,21 +67,38 @@ extension GithubRepoSearchViewController: UISearchResultsUpdating {
     }
 }
 
-extension GithubRepoSearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension GithubRepoSearchViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        displayData.numberOfSEctions
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        displayData.numberOfItems(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        let entity = displayData.item(with: indexPath)!
+        
+        if let stargazersCount = entity.stargazersCount {
+            cell.textLabel?.text = "\(entity.name) ⭐️\(stargazersCount)"
+        } else {
+            cell.textLabel?.text = "\(entity.name)"
+        }
+        
+        cell.detailTextLabel?.text = entity.description
         return cell
     }
-    
+}
+
+extension GithubRepoSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //dependency.presenter.didSelect(GithubRepoEntity.init)
+        let entity = displayData.item(with: indexPath)!
+        dependency.presenter.didSelect(entity)
     }
 }

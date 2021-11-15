@@ -23,6 +23,7 @@ protocol GithubRepoSearchView: AnyObject {
 class GithubRepoSearchPresenter {
     
     struct Dependency {
+        let recommendInteractor: UseCase<Void, [GithubRepoEntity], Never>
         let interactor: UseCase<String, [GithubRepoEntity], Error>
         let router: GithubRepoSearchWireframe
     }
@@ -39,21 +40,34 @@ class GithubRepoSearchPresenter {
 
 extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
     func viewDidLoad() {
-        
-        // TODO: recommend data
-        // dependency.interactor.execute ...
+                
+        dependency.recommendInteractor.execute(()) { result in
+            DispatchQueue.main.async { [weak self] in
+                switch result {
+                case .success(let value):
+                    guard let self = self else { return }
+                    self.view.showRecommended(value)
+                    
+                case .failure(let error):
+                    print("error: \(error)")
+                }
+            }
+        }
     }
     
     func search(_ word: String) {
-        dependency.interactor.execute(word) { [weak self] result in
-            guard let self = self else { return }
+        dependency.interactor.execute(word) { result in
             
-            switch result {
-            case .success(let value):
-                self.view.showData(value)
-            case .failure(let error):
-                self.view.showError(error)
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                switch result {
+                case .success(let value):
+                    self.view.showData(value)
+                case .failure(let error):
+                    self.view.showError(error)
+                }
             }
+           
         }
     }
     

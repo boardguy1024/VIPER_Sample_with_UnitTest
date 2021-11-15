@@ -39,9 +39,11 @@ extension AppDefaultDependency: AppDependency {
         
         // Dependency inject...
         let router = GithubRepoSearchRouter()
-        let interactor = UseCase(GithubRepoSearchInteractor())
+        let recommendInteractor = UseCase(GithubRepoRecommendInteractor())
+        let searchInteractor = UseCase(GithubRepoSearchInteractor())
         
-        vc.dependency = .init(presenter: GithubRepoSearchPresenter(view: vc, inject: GithubRepoSearchPresenter.Dependency(interactor: interactor, router: router)))
+        let dependency: GithubRepoSearchPresenter.Dependency = .init(recommendInteractor: recommendInteractor, interactor: searchInteractor, router: router)
+        vc.dependency = .init(presenter: GithubRepoSearchPresenter(view: vc, inject: dependency))
         
         return vc
     }
