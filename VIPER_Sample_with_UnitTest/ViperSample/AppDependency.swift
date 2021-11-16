@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AppDependency {
+protocol AppDependencies {
     // UIViewControllerを返すようにする
     
     //各モジュールを返すメソッド
@@ -18,7 +18,7 @@ protocol AppDependency {
 }
 
 //　Clean Architecture本でいうところの、「メインモジュール」
-public struct AppDefaultDependency {
+public struct AppDefaultDependencies {
     
     public init() { }
     
@@ -29,7 +29,7 @@ public struct AppDefaultDependency {
     }
 }
 
-extension AppDefaultDependency: AppDependency {
+extension AppDefaultDependencies: AppDependencies {
     
     func assembleGithubRepoSearchModule() -> UIViewController {
         let vc = { () -> GithubRepoSearchViewController in
