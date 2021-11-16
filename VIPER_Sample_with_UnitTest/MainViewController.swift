@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     
     @IBAction private func buttonTapped(_ sender: Any) {
         
-        let entryViewController = AppDefaultDependency().rootViewController()
+        let entryViewController = AppDefaultDependencies().rootViewController()
         navigationController?.pushViewController(entryViewController, animated: true)
     }
 }

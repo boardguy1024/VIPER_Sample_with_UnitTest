@@ -38,7 +38,7 @@ extension AppDefaultDependencies: AppDependencies {
         }()
         
         // Dependency inject...
-        let router = GithubRepoSearchRouter()
+        let router = GithubRepoSearchRouter(appDependencies: self, searchViewController: vc)
         let recommendInteractor = UseCase(GithubRepoRecommendInteractor())
         let searchInteractor = UseCase(GithubRepoSearchInteractor())
         

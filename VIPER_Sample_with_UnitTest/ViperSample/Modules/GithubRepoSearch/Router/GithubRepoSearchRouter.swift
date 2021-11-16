@@ -11,7 +11,7 @@ import UIKit
 protocol GithubRepoSearchWireframe {
     var searchViewController: UIViewController { get }
     
-    func showDetailView(entry: GithubRepoEntity)
+    func showDetailView(entity: GithubRepoEntity)
     func showError(error: Error)
 }
 
@@ -21,9 +21,9 @@ struct GithubRepoSearchRouter: GithubRepoSearchWireframe {
     
     unowned var searchViewController: UIViewController
     
-    func showDetailView(entry: GithubRepoEntity) {
+    func showDetailView(entity: GithubRepoEntity) {
         // assemble~~~ModuleはDIセットが完了しているモニュールのViewControllerを返す
-        let viewController = appDependencies.assembleGithubRepoDetailModule(githubRepoEntity: entry)
+        let viewController = appDependencies.assembleGithubRepoDetailModule(githubRepoEntity: entity)
         searchViewController.navigationController?.pushViewController(viewController, animated: true)
     }
     

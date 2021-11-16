@@ -3,4 +3,69 @@
    uuid = "8ADEB374-9A67-4390-98E8-BF3EBC2D0FED"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E55E335-2F48-4C5F-AA61-239F0E0F9F58"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitTests/GithubRepoSearch/GithubRepoSearchPresenterTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "testPresenterErrorHandling()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E55E335-2F48-4C5F-AA61-239F0E0F9F58 - cf3f5280f23e3e9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (__C.XCTActivity) -&gt; () in closure #1 (__C.XCTActivity) -&gt; () in UnitTests.GithubRepoSearchPresenterTests.testPresenterErrorHandling() -&gt; ()"
+                  moduleName = "UnitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/parkkyungseok/xcode-swiftui/Architecture/VIPER_Sample_with_UnitTest/UnitTests/GithubRepoSearch/GithubRepoSearchPresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "9E55E335-2F48-4C5F-AA61-239F0E0F9F58 - cf3f5280f23e3e59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (__C.XCTActivity) -&gt; () in closure #1 (__C.XCTActivity) -&gt; () in UnitTests.GithubRepoSearchPresenterTests.testPresenterErrorHandling() -&gt; ()"
+                  moduleName = "UnitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/parkkyungseok/xcode-swiftui/Architecture/VIPER_Sample_with_UnitTest/UnitTests/GithubRepoSearch/GithubRepoSearchPresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "404">
+               </Location>
+               <Location
+                  uuid = "9E55E335-2F48-4C5F-AA61-239F0E0F9F58 - cf3f5280f23e3e9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (__C.XCTActivity) -&gt; () in closure #1 (__C.XCTActivity) -&gt; () in UnitTests.GithubRepoSearchPresenterTests.testPresenterErrorHandling() -&gt; ()"
+                  moduleName = "UnitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/parkkyungseok/xcode-swiftui/Architecture/VIPER_Sample_with_UnitTest/UnitTests/GithubRepoSearch/GithubRepoSearchPresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

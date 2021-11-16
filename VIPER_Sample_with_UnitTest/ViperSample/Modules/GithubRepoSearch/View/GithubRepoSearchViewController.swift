@@ -49,11 +49,6 @@ extension GithubRepoSearchViewController: GithubRepoSearchView {
         displayData.searchResultEntities = data
         tableView.reloadData()
     }
-    
-    func showError(_ error: Error) {
-        // TODO: showError
-        print("showed Error: \(error)")
-    }
 }
 
 extension GithubRepoSearchViewController: UISearchResultsUpdating {
@@ -70,7 +65,7 @@ extension GithubRepoSearchViewController: UISearchResultsUpdating {
 extension GithubRepoSearchViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        displayData.numberOfSEctions
+        displayData.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

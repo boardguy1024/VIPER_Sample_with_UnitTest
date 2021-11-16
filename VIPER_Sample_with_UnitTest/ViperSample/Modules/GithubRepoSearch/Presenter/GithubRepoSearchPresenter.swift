@@ -17,7 +17,6 @@ protocol GithubRepoSearchPresentation: AnyObject {
 protocol GithubRepoSearchView: AnyObject {
     func showRecommended(_ data: [GithubRepoEntity])
     func showData(_ data: [GithubRepoEntity])
-    func showError(_ error: Error)
 }
 
 class GithubRepoSearchPresenter {
@@ -43,13 +42,13 @@ extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
                 
         dependency.recommendInteractor.execute(()) { result in
             DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 switch result {
                 case .success(let value):
-                    guard let self = self else { return }
                     self.view.showRecommended(value)
                     
-                case .failure(let error):
-                    print("error: \(error)")
+                case .failure(_):
+                    print("固定値を返すのでここは何もしない")
                 }
             }
         }
@@ -64,7 +63,9 @@ extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
                 case .success(let value):
                     self.view.showData(value)
                 case .failure(let error):
-                    self.view.showError(error)
+                    if (error as NSError).code != NSURLErrorCancelled {
+                        self.dependency.router.showError(error: error)
+                    }
                 }
             }
            
@@ -72,7 +73,7 @@ extension GithubRepoSearchPresenter: GithubRepoSearchPresentation {
     }
     
     func didSelect(_ entity: GithubRepoEntity) {
-        dependency.router.showNextView()
+        dependency.router.showDetailView(entity: entity)
     }
     
     

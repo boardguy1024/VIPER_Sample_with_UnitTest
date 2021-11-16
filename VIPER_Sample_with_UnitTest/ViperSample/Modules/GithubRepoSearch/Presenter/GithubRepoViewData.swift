@@ -16,7 +16,7 @@ class GithubRepoViewData {
     var recommends: [GithubRepoEntity] = []
     var searchResultEntities: [GithubRepoEntity] = []
     
-    var numberOfSEctions: Int {
+    var numberOfSections: Int {
         Section.allCases.count
     }
     
