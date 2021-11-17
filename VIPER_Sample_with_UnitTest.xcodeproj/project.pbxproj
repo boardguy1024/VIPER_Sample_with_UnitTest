@@ -25,6 +25,7 @@
 		403943EC2741534D00CA7897 /* GithubAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403943EB2741534D00CA7897 /* GithubAPIError.swift */; };
 		403943FB27437BA200CA7897 /* GithubRepoSearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403943FA27437BA200CA7897 /* GithubRepoSearchPresenterTests.swift */; };
 		403943FE27437D3F00CA7897 /* AppTestDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403943FD27437D3F00CA7897 /* AppTestDependencies.swift */; };
+		403944002744D0B300CA7897 /* GithubRepoSearchRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403943FF2744D0B300CA7897 /* GithubRepoSearchRouterTests.swift */; };
 		4083BC18274200DF0078A954 /* GithubRepoViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4083BC17274200DF0078A954 /* GithubRepoViewData.swift */; };
 		4083BC1A27420BFA0078A954 /* GithubRepoRecommendInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4083BC1927420BFA0078A954 /* GithubRepoRecommendInteractor.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		403943F127437B7200CA7897 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		403943FA27437BA200CA7897 /* GithubRepoSearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchPresenterTests.swift; sourceTree = "<group>"; };
 		403943FD27437D3F00CA7897 /* AppTestDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTestDependencies.swift; sourceTree = "<group>"; };
+		403943FF2744D0B300CA7897 /* GithubRepoSearchRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoSearchRouterTests.swift; sourceTree = "<group>"; };
 		4083BC17274200DF0078A954 /* GithubRepoViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoViewData.swift; sourceTree = "<group>"; };
 		4083BC1927420BFA0078A954 /* GithubRepoRecommendInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoRecommendInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				403943FA27437BA200CA7897 /* GithubRepoSearchPresenterTests.swift */,
+				403943FF2744D0B300CA7897 /* GithubRepoSearchRouterTests.swift */,
 			);
 			path = GithubRepoSearch;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				403944002744D0B300CA7897 /* GithubRepoSearchRouterTests.swift in Sources */,
 				403943FE27437D3F00CA7897 /* AppTestDependencies.swift in Sources */,
 				403943FB27437BA200CA7897 /* GithubRepoSearchPresenterTests.swift in Sources */,
 			);
@@ -466,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -521,7 +525,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

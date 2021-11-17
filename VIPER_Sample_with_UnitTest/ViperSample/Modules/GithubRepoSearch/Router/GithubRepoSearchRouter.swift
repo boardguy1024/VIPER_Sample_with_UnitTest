@@ -30,7 +30,7 @@ struct GithubRepoSearchRouter: GithubRepoSearchWireframe {
     func showError(error: Error) {
         let alert = UIAlertController(title: "通信ヘラー", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(.init(title: "OK", style: .default, handler: nil))
-        searchViewController.navigationController?.pushViewController(alert, animated: true)
+        searchViewController.present(alert, animated: true)
     }
     
  
